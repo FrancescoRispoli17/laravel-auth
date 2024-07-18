@@ -32,7 +32,7 @@
                                 <td>{{$project->slug}}</td>
                                 <td>{{$project->creation_date}}</td>
                                 <td>{{$project->size}} Kb</td>
-                                <td class="px-0"><a type="button" class="btn btn-light" href="{{route('admin.projects.show', $project->id)}}">Detail</a></td>
+                                <td class="px-0"><a type="button" class="btn btn-light" href="{{route('admin.projects.show', $project)}}">Detail</a></td>
                                 <td class="px-0"><button type="button" class="btn btn-primary">Update</button></td>
                                 <td class="px-0"><button type="button" class="btn btn-danger">Delete</button></td>
                             </tr>
