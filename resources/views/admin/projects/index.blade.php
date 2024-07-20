@@ -6,13 +6,18 @@
                 <h1>Projects List</h1>
             </div>
             <div class="col-auto py-5 me-5">
-                <a type="button" class="btn btn-primary" href="#">Add new</a>
+                <a type="button" class="btn btn-primary" href="{{ route('admin.projects.create') }}">Add new</a>
             </div>
         </div>
     </div>
     <div class="container">
         <div class="row">
             <div class="col">
+                @if (session('message'))
+                    <div class="alert alert-success">
+                        {{ session('message') }}
+                    </div>
+                @endif
                 <table class="table">
                     <thead>
                       <tr>
