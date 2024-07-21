@@ -38,8 +38,14 @@
                                 <td>{{$project->creation_date}}</td>
                                 <td>{{$project->size}} Kb</td>
                                 <td class="px-0"><a type="button" class="btn btn-light" href="{{route('admin.projects.show', $project)}}">Detail</a></td>
-                                <td class="px-0"><button type="button" class="btn btn-primary">Update</button></td>
-                                <td class="px-0"><button type="button" class="btn btn-danger">Delete</button></td>
+                                <td class="px-0"><a type="button" class="btn btn-primary" href="{{route('admin.projects.edit', $project)}}">Update</a></td>
+                                <td class="px-0">
+                                    <form action="{{route('admin.projects.destroy', $project)}}" method="POST">
+                                        @csrf   
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
