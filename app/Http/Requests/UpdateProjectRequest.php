@@ -21,8 +21,9 @@ class UpdateProjectRequest extends FormRequest
      */
     public function rules(): array
     {
+        $projectId = $this->project->id;
         return [
-            'title' => ['required', 'max:50'],
+            'title' => ' required|max:50|unique:projects,title, ' . $projectId,
             'creation_date' => ['required'],
             'size' => ['required'],
         ];
